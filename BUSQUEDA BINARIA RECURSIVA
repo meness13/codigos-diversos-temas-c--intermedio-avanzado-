@@ -1,0 +1,16 @@
+
+//BUSQUEDA BINARIA RECURSIVA (BUS)CA UN ELEMENTO DENTRO DE UN ARR)
+int b_binaria(int a[],int p,int u,int clave){
+	int med=(p+u)/2;
+	if(p>u){
+		return -1;
+	}else{
+		if(clave == a[med]){
+			return med;
+		}else if(clave>a[med]){
+			return b_binaria(a,med+1,u,clave);
+		}else{
+			return b_binaria(a,p,med-1,clave);
+		}
+	}
+}
