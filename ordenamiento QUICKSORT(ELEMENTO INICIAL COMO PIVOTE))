@@ -1,0 +1,20 @@
+
+int particion(int a[],int i,int j){
+	int piv=a[i],m=i;
+	for(int k=i+1;k<j;k++){
+		if(a[k]<a[i]){
+			m++;
+			swap(a[k],a[m]);
+		}else{}
+	}
+	swap(a[i],a[m]);
+	return m;
+}
+
+void qsort1(int a[],int p,int u){
+	if(p<u){
+		int pospiv=particion(a,p,u);
+		qsort1(a,p,pospiv-1);
+		qsort1(a,pospiv+1,u);
+	}
+}
