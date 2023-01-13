@@ -1,0 +1,35 @@
+
+#include <cstdlib>
+#include <iostream>
+#include<string.h>
+#include<conio.h>
+#define max 100
+using namespace std;
+
+int main()
+{
+    char* texto[3], buffer [81], clave[16], *dir_buffer;
+    int i = 0, j = 0,cont=0;
+    cout << " Introduzca la palabra clave a buscar: ";
+    cin.getline(clave,15);
+    while (i < 50 )
+    {
+        cin.getline(buffer,80);
+        dir_buffer = buffer;
+        if (strstr (dir_buffer, clave) == NULL)  
+          {
+             texto [j] = new char[strlen (buffer ) +1];
+             strcpy (texto [j], buffer);
+             j++;
+             cont++;
+          }
+        i++;
+     }       
+    cout << " texto con lineas elminadas "<< endl;
+    for (i = 0; i< j; i++)
+        cout << texto [i] << endl; 
+        cout<<"\n la cantidad de palabras es :"<<endl;cin>>cont;
+        
+    getch();
+    return 0;
+ }
