@@ -1,0 +1,25 @@
+
+void mezcla(int a[],int p,int central,int u){
+	int n=u-p+1,aux[n]={},z=0,i=p,k=central+1;
+	while(i<=central && k<=u){
+		if(a[i]<=a[k]){
+			aux[z++]=a[i++];
+		}else{
+			aux[z++]=a[k++];
+		}
+	}
+	while(i<=central) aux[z++]=a[i++];
+	while(k<=u) aux[z++]=a[k++];
+	for(int l=0;l<n;l++){
+		a[l+p]=aux[l];
+	}
+}
+
+void merge(int a[],int p,int u){
+	if(p<u){
+		int med=(p+u)/2;
+		merge(a,p,med-1);
+		merge(a,med+1,u);
+		mezcla(a,p,med,u);
+	}
+}
