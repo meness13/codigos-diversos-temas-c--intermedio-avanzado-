@@ -1,0 +1,53 @@
+
+
+#include<iostream>
+#include<conio.h>
+#include<string.h>
+using namespace std;
+
+int redimensionar(int tamanio, string *dir_f){
+	tamanio+=2;
+	string *nuevo= new string[tamanio+2];
+	for(int i=0; i<tamanio-2; i++){
+		nuevo[i]=dir_f[i];
+		cout << nuevo[i] << " ";
+	}
+}
+
+
+int main(){
+	int i=0,j,n=0;
+	string v;
+	string** base = new string * [1];
+	string a[1];
+	string b[1];
+	
+while(true){
+    if(v=="0") break;
+			n++;
+	cout<<"ingrese el valor enteros"<<endl;getline(cin,v);
+
+	string** base2 = new string * [n];
+	for (i = 0; i < n; i++)
+	base2[i] = new string[2];
+	for (i=0;i<n-1;i++)
+	for (j=0;j<2;j++)
+			base2[i][j] = base[i][j];
+			delete[] base;
+			base = base2;
+		 redimensionar(1,b);
+		  redimensionar(1,a);	
+	for(int i=0;i<n;i++){
+		int t = stoi(v);
+		if(t%2==0){
+			a[i]=t;
+		}else{
+			b[i]=t;
+		}	
+	}		
+	
+	base[n-1][1]=v;			
+}
+	getch();
+	return 0;
+}
