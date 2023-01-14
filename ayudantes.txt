@@ -1,0 +1,10 @@
+Estatura: 5
+Estatura: 3
+Estatura: 2
+Estatura: 8
+Estatura: 6
+Peso: 6
+Peso: 9
+Peso: 10
+Peso: 3
+Peso: 1
